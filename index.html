@@ -3,7 +3,6 @@
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-        
           <title>JS Calculator</title>
           <meta name="description" content="A simple HTML5 Template for new projects.">
           <meta name="author" content="SitePoint">
@@ -12,16 +11,56 @@
           <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
           <meta property="og:description" content="A simple HTML5 Template for new projects.">
           <meta property="og:image" content="image.png">
-        
           <link rel="icon" href="/favicon.ico">
           <link rel="icon" href="/favicon.svg" type="image/svg+xml">
           <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-          <link rel="stylesheet" href="css/styles.css?v=1.0">
+          <link rel="stylesheet" href="styles.css">
+          <script src="script.js"></script>
         </head>
         
         <body>
           <div>
             <h1>JS Basic Calculator</h1>
+            <h1>Calculator Design Using HTML Layout</h1>
+            <div class="container">
+              <div class="header">Calculator</div>
+              <input type="text" id="result" class="result" onclick="">
+              <div class="first-row">
+                <input type="button" name="square-root" value="&radic;" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="left-parenthesis" value="(" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="right-parenthesis" value=")" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="percent" value="%" class="global" onclick="printSignToCalcHeader()">
+              </div>
+              <div class="second-row">
+                <input type="button" name="seven" value="7" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="eight" value="8" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="nine" value="9" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="divide" value="/" class="global" onclick="printSignToCalcHeader()">
+              </div>
+              <div class="third-row">
+                <input type="button" name="four" value="4" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="five" value="5" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="six" value="6" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="multiply" value="X" class="global" onclick="printSignToCalcHeader()">
+              </div>
+              <div class="fourth-row">
+                <input type="button" name="one" value="1" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="two" value="2" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="three" value="3" class="global" onclick="printSignToCalcHeader()">
+                <input type="button" name="minus" value="-" class="global" onclick="printSignToCalcHeader()">
+              </div>
+              <div class="conflict">
+                <div class="left">
+                  <input type="button" name="zero" value="0" class=" big" onclick="printSignToCalcHeader()">
+                  <input type="button" name="dot" value="." class=" small" onclick="printSignToCalcHeader()">
+                  <input type="button" name="delete" value="Del" class=" red small white-text top-margin" onclick="printSignToCalcHeader()">
+                  <input type="button" name="calculate" value="=" class=" green white-text big top-margin" onclick="calculateResult()">
+                </div>
+                <div class="right">
+                  <input type="button" name="" value="+" class="global grey plus" onclick="printSignToCalcHeader()">
+                </div>
+              </div>
+            </div>
           </div>
         </body>
-        </html>
+      </html>
