@@ -1,6 +1,8 @@
-function printSignToCalcHeader() 
+function printSignToCalcHeader(sign) 
 {
-    alert('Clicked button will be printed in the calc header');
+    console.log('Clicked button was' + Number(sign));
+    var element = document.getElementById('result');
+    element.value += sign;
 }
 
 function calculateResult()
