@@ -66,22 +66,26 @@ function performMathOperation(sign)
         case '+': 
         {
             return Number(this.leftElement) + Number(this.rightElement);
-            break;
         }
         case '-': 
         {
             return this.leftElement - this.rightElement;
-            break;
         }
         case '*': 
         {
             return this.leftElement * this.rightElement;
-            break;
         }
         case '/': 
         {
             return this.leftElement / this.rightElement;
-            break;
+        }
+        case '%':
+        {
+            return this.leftElement / 100 * this.rightElement;        
+        }
+        case 'sqrt':
+        {
+            return Math.sqrt(this.leftElement); 
         }
     }
 }

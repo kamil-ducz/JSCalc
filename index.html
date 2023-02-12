@@ -27,10 +27,10 @@
               <input type="text" id="buffer" class="result" onclick="">
               <input type="text" id="result" class="result" onclick="calculateResult()">
               <div class="first-row">
-                <input type="button" name="square-root" value="&radic;" class="global" onclick="">
+                <input type="button" name="square-root" value="&radic;" class="global" onclick="handleLeftSideOfOperation('sqrt')">
                 <input type="button" name="left-parenthesis" value="(" class="global" onclick="">
                 <input type="button" name="right-parenthesis" value=")" class="global" onclick="">
-                <input type="button" name="percent" value="%" class="global" onclick="">
+                <input type="button" name="percent" value="%" class="global" onclick="handleLeftSideOfOperation('%')">
               </div>
               <div class="second-row">
                 <input type="button" name="seven" value="7" class="global" onclick="printSignToCalcHeader('7')">
