@@ -23,8 +23,9 @@
             <h1>JS Basic Calculator</h1>
             <h1>Calculator Design Using HTML Layout</h1>
             <div class="container">
-              <div class="header">Calculator</div>
-              <input type="text" id="result" class="result" onclick="">
+              <div>Calculator</div>
+              <input type="text" id="buffer" class="result" onclick="">
+              <input type="text" id="result" class="result" onclick="calculateResult()">
               <div class="first-row">
                 <input type="button" name="square-root" value="&radic;" class="global" onclick="">
                 <input type="button" name="left-parenthesis" value="(" class="global" onclick="">
@@ -57,7 +58,7 @@
                   <input type="button" name="calculate" value="=" class=" green white-text big top-margin" onclick="calculateResult()">
                 </div>
                 <div class="right">
-                  <input type="button" name="" value="+" class="global grey plus" onclick="">
+                  <input type="button" name="" value="+" class="global grey plus" onclick="handleLeftSideOfOperation('+')">
                 </div>
               </div>
             </div>
