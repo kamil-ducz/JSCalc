@@ -1,3 +1,15 @@
+function playDelSound() 
+{
+    var audio = new Audio('sound/del.mp3');
+    audio.play();
+}
+
+function playEqualsSound() 
+{
+    var audio = new Audio('sound/equals.mp3');
+    audio.play();
+}
+
 var leftElement = 0;
 var rightElement = 0;
 var calculationResult = 0;
@@ -62,16 +74,18 @@ function handleLeftSideOfOperation(sign)
 
 function cleanCalcHeaderAndBuffer()
 {
+    playDelSound();
     var resultInput = document.getElementById('result');
     var bufferInput = document.getElementById('buffer');
     resultInput.value = null;
-    bufferInput.value = null;
+    bufferInput.value = null;    
 }
 
 function performMathOperation(sign)
 {
     console.log('entered performMathOperation function!');
     console.log('this.leftElement='+this.leftElement+' this.rightElement='+this.rightElement+' this.sign='+this.currentSign+' typeof(sign)='+typeof(currentSign));
+    playEqualsSound();
     switch(sign) 
     {
         case '+': 
