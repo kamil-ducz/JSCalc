@@ -28,7 +28,12 @@ function calculateResult()
     console.log('element='+element);
     element.value = this.calculationResult;
     this.bufferElement = document.getElementById('buffer');
-    this.bufferElement.value += this.rightElement;
+    if (this.currentSign != 'sqrt')
+    {
+        this.bufferElement.value += this.rightElement;
+        return;
+    }
+    return;
 }
 
 function handleLeftSideOfOperation(sign)
@@ -39,14 +44,20 @@ function handleLeftSideOfOperation(sign)
     this.leftElement = element.value;
     console.log('this.leftElement='+this.leftElement);
     this.currentSign = sign;
-    console.log('this.currentSign='+this.currentSign);
+    console.log('this.currentSign='+this.currentSign+'typeof(this.currentSign)='+typeof(this.currentSign));
     this.bufferElement = document.getElementById('buffer');
-    this.buffer = this.leftElement + sign;    
-    this.bufferElement.value = buffer;
-    console.log('this.buffer='+this.buffer+' buffer type='+typeof(this.buffer));
-    element.value = null;
-    calcState = 'left-ready';
-    console.log('calcState='+calcState);
+    this.buffer = this.leftElement + sign;  
+    if (this.currentSign != "sqrt")
+    {        
+        this.bufferElement.value = buffer;
+        console.log('this.buffer='+this.buffer+' buffer type='+typeof(this.buffer));
+        element.value = null;
+        calcState = 'left-ready';
+        console.log('calcState='+calcState);
+        return;
+    }
+    this.bufferElement.value += 'sqrt('+this.leftElement+')';  
+    return;
 }
 
 function cleanCalcHeaderAndBuffer()
