@@ -10,6 +10,12 @@ function playEqualsSound()
     audio.play();
 }
 
+function playKeystroke() 
+{
+    var audio = new Audio('sound/keystroke.mp3');
+    audio.play();
+}
+
 var leftElement = 0;
 var rightElement = 0;
 var calculationResult = 0;
@@ -20,6 +26,7 @@ var calcState = null;
 
 function printSignToCalcHeader(sign) 
 {
+    playKeystroke() 
     console.log('Clicked button was' + Number(sign));
     var element = document.getElementById('result');
     element.value += sign;
