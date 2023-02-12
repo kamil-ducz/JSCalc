@@ -121,3 +121,14 @@ function performMathOperation(sign)
         }
     }
 }
+
+function addDecimalDot()
+{
+    var resultInput = document.getElementById('result');
+    var resultInputValue = String(resultInput.value);
+    if (resultInputValue.charAt(resultInputValue.length - 1) == '.')
+    {
+        return;
+    }
+    resultInput.value += '.';
+}
