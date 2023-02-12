@@ -53,3 +53,11 @@ function handleLeftSideOfOperation(sign)
     calcState = 'left-ready';
     console.log('calcState='+calcState);
 }
+
+function cleanCalcHeaderAndBuffer()
+{
+    var resultInput = document.getElementById('result');
+    var bufferInput = document.getElementById('buffer');
+    resultInput.value = null;
+    bufferInput.value = null;
+}
