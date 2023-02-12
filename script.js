@@ -1,7 +1,7 @@
 var leftElement = 0;
 var rightElement = 0;
 var calculationResult = 0;
-var sign = null;
+
 var buffer = null;
 var currentSign = null;
 var calcState = null;
@@ -21,19 +21,14 @@ function calculateResult()
     console.log('left-ready='+this.calcState+' this.buffer='+this.buffer+' this.currentSign='+this.currentSign)
     if (calcState = 'left-ready' && this.buffer != null & this.currentSign != null)
     {
-        this.calculationResult = Number(leftElement) +this.sign+ Number(rightElement);
-        console.log('this.calculationResult='+this.calculationResult);
+        this.calculationResult = performMathOperation(this.currentSign);
+        console.log('this.calculationResult=' + this.calculationResult);
     }
     var element = document.getElementById('result');
     console.log('element='+element);
     element.value = this.calculationResult;
     this.bufferElement = document.getElementById('buffer');
     this.bufferElement.value += this.rightElement;
-}
-
-function cancelLastAction() 
-{
-    alert('Button will cancel last user operation');
 }
 
 function handleLeftSideOfOperation(sign)
@@ -60,4 +55,33 @@ function cleanCalcHeaderAndBuffer()
     var bufferInput = document.getElementById('buffer');
     resultInput.value = null;
     bufferInput.value = null;
+}
+
+function performMathOperation(sign)
+{
+    console.log('entered performMathOperation function!');
+    console.log('this.leftElement='+this.leftElement+' this.rightElement='+this.rightElement+' this.sign='+this.currentSign+' typeof(sign)='+typeof(currentSign));
+    switch(sign) 
+    {
+        case '+': 
+        {
+            return Number(this.leftElement) + Number(this.rightElement);
+            break;
+        }
+        case '-': 
+        {
+            return this.leftElement - this.rightElement;
+            break;
+        }
+        case '*': 
+        {
+            return this.leftElement * this.rightElement;
+            break;
+        }
+        case '/': 
+        {
+            return this.leftElement / this.rightElement;
+            break;
+        }
+    }
 }
